@@ -140,7 +140,7 @@
             justify-content: center;
             text-align: center;
             position: relative;
-            overflow: hidden;
+            overflow: visible;
         }
         
         .hero-content {
@@ -458,6 +458,10 @@
         .mockup-showcase {
             position: relative;
             margin-top: 50px;
+            width: 100%;
+            display: block;
+            visibility: visible;
+            z-index: 10;
         }
         
         .mockup-container {
@@ -469,12 +473,15 @@
         .phone-frame {
             width: 100%;
             height: 800px;
+            min-height: 800px;
             background: linear-gradient(135deg, #2c3e50, #34495e);
             border-radius: 40px;
             padding: 20px;
             box-shadow: var(--shadow-card);
             position: relative;
             overflow: hidden;
+            display: block;
+            visibility: visible;
         }
         
         .phone-screen {
@@ -489,8 +496,11 @@
         .mockup-carousel {
             width: 700%;
             height: 100%;
+            min-height: 100%;
             display: flex;
+            flex-direction: row;
             animation: mockupSlide 35s infinite ease-in-out;
+            will-change: transform;
         }
         
         @keyframes mockupSlide {
@@ -1360,6 +1370,17 @@
             .story-quote::before,
             .story-quote::after {
                 display: none;
+            }
+            
+            .phone-frame {
+                height: 600px;
+                min-height: 600px;
+                padding: 15px;
+            }
+            
+            .mockup-container {
+                max-width: 100%;
+                padding: 0 10px;
             }
         }
         
